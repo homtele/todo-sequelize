@@ -8,7 +8,7 @@ const { User } = require('../models')
 module.exports = app => {
   app.use(passport.session())
   app.use(passport.initialize())
-  passport.use(new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+  passport.use(new LocalStrategy({ usernameField: 'email', passReqToCallback: true }, async (req, email, password, done) => {
     try {
       const user = await User.findOne({ where: { email } })
       if (!user) {
