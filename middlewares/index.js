@@ -1,4 +1,4 @@
 module.exports = {
-  authenticator: require('./authenticator.js'),
-  locals: require('./locals.js')
+  authenticator: require('./modules/authenticator.js'),
+  locals: require('./modules/locals.js')
 }
