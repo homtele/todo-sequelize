@@ -19,6 +19,9 @@ app.use(methodOverride('_method'))
 
 usePasspert(app)
 app.use(routes)
+app.use((req, res, next) => {
+  res.send('error')
+})
 
 app.listen(process.env.PORT, () => {
   console.log(`App is running on http://localhost:${process.env.PORT}`)
